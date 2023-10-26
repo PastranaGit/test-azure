@@ -21,17 +21,14 @@ stages:
       vmImage: ubuntu-latest
     steps:
     
-    - task: Docker@2
-      inputs:
-       containerRegistry: 'DockerHubDemo'
-       repository: 'pastrana-registry'
-       command: 'build'
-       Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+    
     - task: Docker@2
       inputs:
         containerRegistry: 'DockerHubDemo'
         repository: 'pastranahub/pastrana-registry'
-        command: 'push'
+        command: 'buildAndPush'
+        Dockerfile: $(Build.SourcesDirectory)/Dockerfile
+    
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
