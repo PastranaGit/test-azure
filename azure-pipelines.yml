@@ -23,7 +23,17 @@ stages:
     
     - task: Docker@2
       inputs:
+       containerRegistry: 'DockerHubDemo'
+       repository: 'pastrana-registry'
+       command: 'build'
+       Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+    - task: Docker@2
+      inputs:
         containerRegistry: 'DockerHubDemo'
         repository: 'pastrana-registry'
-        command: 'buildAndPush'
-        Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+        command: 'push'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
