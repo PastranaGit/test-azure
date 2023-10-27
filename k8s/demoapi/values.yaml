@@ -52,7 +52,7 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-wordpress
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
   hosts:
-    - host: '*'
+    - host:
       paths:
         - path: /demoapi/?(.*)
           pathType: ImplementationSpecific
