@@ -52,14 +52,14 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-wordpress
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
   hosts:
-    - host: '*'
+    #- host: '*'
       paths:
         - path: /demoapi/?(.*)
           pathType: ImplementationSpecific
   tls: 
     - secretName: tls-secret
-      hosts:
-        - '*'
+      #hosts:
+        #- '*'
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
