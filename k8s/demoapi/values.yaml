@@ -5,12 +5,12 @@
 replicaCount: 1
 
 image:
-  repository: trainingrmacr.azurecr.io/net-core
+  repository: pastranahub/pastrana-registry
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
-imagePullSecrets: [name: acr-secret-net]
+imagePullSecrets: [name: dockerhub-secret-pastrana]
 nameOverride: ""
 fullnameOverride: ""
 
@@ -52,14 +52,14 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-wordpress
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
   hosts:
-    - host: ready-wordpress.southcentralus.cloudapp.azure.com
+    - host: "*"
       paths:
-        - path: /appnet/?(.*)
+        - path: /demoapi/?(.*)
           pathType: ImplementationSpecific
   tls: 
     - secretName: tls-secret
       hosts:
-        - ready-wordpress.southcentralus.cloudapp.azure.com
+        - "*"
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
