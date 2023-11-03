@@ -35,5 +35,5 @@ stages:
         repository: 'pastranahub/pastrana-registry'
         command: 'buildAndPush'
         Dockerfile: $(Build.SourcesDirectory)/Dockerfile
-    
+    #
     
