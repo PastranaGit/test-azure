@@ -2,16 +2,17 @@
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
-#trigger:
- # branches:
- #   include:
- #     - main
-pr:
+trigger: 
+#none
   branches:
     include:
       - main
-      - develop
-      - feature/*
+pr: none
+#  branches: none
+#    include:
+#      - main
+#      - develop
+#      - feature/*
 #    exclude:
 #      - test/*   #esta propiedad excluye los pr asociados a esta rama
 
@@ -39,8 +40,4 @@ stages:
         command: 'buildAndPush'
         Dockerfile: $(Build.SourcesDirectory)/Dockerfile
     
-    - task: PublishBuildArtifacts@1
-      inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'drop'
-        publishLocation: 'Container'
+    
