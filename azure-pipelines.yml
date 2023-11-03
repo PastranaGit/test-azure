@@ -3,9 +3,12 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 #trigger:
- # branches:
- #   include:
- #     - main
+#  branches:
+#   include:
+#     - main
+#    exclude:
+#      - main
+#      - develop
 pr:
   branches:
     include:
