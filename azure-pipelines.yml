@@ -45,5 +45,8 @@ stages:
     #
     - task: CmdLine@2
       inputs:
-        script: echo $(test)
+        script: echo $(test) 
+    - task: CmdLine@2
+      inputs:
+        script: echo $(test1)    
     
