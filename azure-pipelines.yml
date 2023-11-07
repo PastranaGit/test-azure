@@ -34,7 +34,13 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    
+
+    - task: CmdLine@2
+      inputs:
+        script: echo $(test) 
+    - task: CmdLine@2
+      inputs:
+        script: echo $(test2)       
     
     - task: Docker@2
       inputs:
@@ -43,10 +49,5 @@ stages:
         command: 'buildAndPush'
         Dockerfile: $(Build.SourcesDirectory)/Dockerfile
     #
-    - task: CmdLine@2
-      inputs:
-        script: echo $(test) 
-    - task: CmdLine@2
-      inputs:
-        script: echo $(test1)    
+
     
