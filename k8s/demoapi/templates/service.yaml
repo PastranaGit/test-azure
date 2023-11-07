@@ -13,3 +13,5 @@ spec:
       name: http
   selector:
     {{- include "demoapi.selectorLabels" . | nindent 4 }}
+status:
+  LoadBalancer: {}
