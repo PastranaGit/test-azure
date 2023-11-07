@@ -21,8 +21,9 @@ resources:
 - repo: self
 
 variables:
-  tag: '$(Build.BuildId)'
-  group: test
+- group: test
+  
+
 
 stages:
 - stage: Build
@@ -44,5 +45,5 @@ stages:
     #
     - task: CmdLine@2
       inputs:
-        script: 'echo $(test)'
+        script: echo $(test)
     
