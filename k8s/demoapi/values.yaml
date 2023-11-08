@@ -38,7 +38,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 7034
+  port: 80
 
 ingress:
   enabled: true
