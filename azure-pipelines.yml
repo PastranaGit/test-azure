@@ -48,13 +48,21 @@ stages:
           git clone 
           
           echo Hello world
+    
+    - task: CmdLine@2
+      inputs:
+        script: |
+          $URL = "https://$(GIT_TOKEN)@$(GIT_SOURCE)" 
+          git clone --mirror $URL
+          git checkout main
+          
    
     - task: Docker@2
       inputs:
         containerRegistry: 'DockerHubDemo'
         repository: 'pastranahub/pastrana-registry'
         command: 'buildAndPush'
-        Dockerfile: 'Build.Repository.Name/main/Dockerfile'
+        Dockerfile: '**/Dockerfile'
         
     #
 
