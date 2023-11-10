@@ -42,15 +42,11 @@ stages:
       inputs:
         script: echo $(test2)       
     
-    - task: CmdLine@2
-      inputs:
-        script: |
-          git clone 
-          
-          echo Hello world
+    
     
     - task: CmdLine@2
       inputs:
+  
         script: |
           $URL = "https://$(GIT_TOKEN)@$(GIT_SOURCE)" 
           git clone --mirror $URL
