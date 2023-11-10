@@ -50,7 +50,7 @@ stages:
         script: |
           $URL = "https://$(GIT_TOKEN)@$(GIT_SOURCE)" 
           git clone --mirror $URL
-          git checkout main
+          
           
    
     - task: Docker@2
