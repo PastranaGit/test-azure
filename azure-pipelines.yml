@@ -48,10 +48,11 @@ stages:
       inputs:
   
         script: |
+          mkdir test-azure
           $URL = "https://$(GIT_TOKEN)@$(GIT_SOURCE)" 
-          echo $URL
+          Set-Location "$Build.SourcesDirectory)/test-azure"
           git clone --mirror https://github.com/PastranaGit/test-azure.git
-          cd test-azure
+          Set-Location "$Build.SourcesDirectory)/test-azure/test-azure.git"
           git checkout main
           
    
