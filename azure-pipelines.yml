@@ -51,6 +51,7 @@ stages:
           $URL = "https://$(GIT_TOKEN)@$(GIT_SOURCE)" 
           echo $URL
           git clone --mirror https://github.com/PastranaGit/test-azure.git
+          cd test-azure
           git checkout main
           
    
