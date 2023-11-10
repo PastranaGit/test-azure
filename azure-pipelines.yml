@@ -41,13 +41,20 @@ stages:
     - task: CmdLine@2
       inputs:
         script: echo $(test2)       
+    
+    - task: CmdLine@2
+      inputs:
+        script: |
+          git clone 
+          
+          echo Hello world
    
     - task: Docker@2
       inputs:
         containerRegistry: 'DockerHubDemo'
         repository: 'pastranahub/pastrana-registry'
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        Dockerfile: 'Build.Repository.Name/main/Dockerfile'
         
     #
 
