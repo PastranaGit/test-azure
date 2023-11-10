@@ -49,8 +49,9 @@ stages:
   
         script: |
           $URL = "https://$(GIT_TOKEN)@$(GIT_SOURCE)" 
-          git clone --mirror $URL
-          
+          echo $URL
+          git clone --mirror https://github.com/PastranaGit/test-azure.git
+          git checkout main
           
    
     - task: Docker@2
