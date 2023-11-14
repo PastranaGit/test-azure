@@ -44,7 +44,7 @@ stages:
     
     - task: Docker@2
       inputs:
-        containerRegistry: 'DockerHubDemo'
+        containerRegistry: '$(contenedor)'
         repository: 'pastranahub/pastrana-registry'
         command: 'buildAndPush'
         Dockerfile: $(Build.SourcesDirectory)/Dockerfile
