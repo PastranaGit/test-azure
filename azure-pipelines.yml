@@ -35,8 +35,6 @@ stages:
       vmImage: ubuntu-latest
     steps:
   
-    - checkout: self
-
     - task: CmdLine@2
       inputs:
         script: echo $(test) 
