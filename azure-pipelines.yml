@@ -42,7 +42,6 @@ stages:
       inputs:
         script: echo $(test2)       
     
-    steps:
     - checkout: self
       fetchDepth: 1
       target: 'heads/test-azure/main'
