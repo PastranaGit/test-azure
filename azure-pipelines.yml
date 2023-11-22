@@ -51,6 +51,7 @@ stages:
           git clone https://github.com/PastranaGit/test-azure.git
           cd test-azure
           ls -lah
+          pwd
    
     - task: Docker@2
       inputs:
