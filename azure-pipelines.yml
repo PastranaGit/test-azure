@@ -42,11 +42,11 @@ stages:
       inputs:
         script: echo $(test2)       
     
+    steps:
     - checkout: self
-      clean: true
-      persistCredentials: true
-      displayName: 'Checkout main branch'
-      ref: 'main'
+      fetchDepth: 1
+      target: 'heads/test-azure/main'
+     
     - task: Docker@2
       inputs:
         containerRegistry: 'DockerHubDemo'
