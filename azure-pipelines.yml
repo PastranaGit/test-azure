@@ -47,7 +47,7 @@ stages:
         containerRegistry: '$(contenedor)'
         repository: 'pastranahub/pastrana-registry'
         command: 'buildAndPush'
-        Dockerfile: $(Build.SourcesDirectory)/Dockerfile
+        Dockerfile: /home/vsts/work/1/s/test-azure/Dockerfile
     #
 
     
