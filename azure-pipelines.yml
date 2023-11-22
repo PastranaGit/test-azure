@@ -46,12 +46,8 @@ stages:
       displayName: git clone
       inputs:
         script: | 
-          echo $(Build.SourceBranch)
-          ls -lah
-          git clone https://github.com/PastranaGit/test-azure.git
-          cd test-azure
-          ls -lah
-          pwd
+          git clone $(MainCodeURL)
+          
    
     - task: Docker@2
       inputs:
