@@ -43,7 +43,7 @@ stages:
 #        script: echo $(test2)       
     
     - task: CmdLine@2
-      displayName: git clone
+      displayName: rama codigo fuente
       inputs:
         script: | 
           git clone $(MainCodeURL)
