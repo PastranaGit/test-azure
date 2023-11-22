@@ -35,17 +35,22 @@ stages:
       vmImage: ubuntu-latest
     steps:
   
-    - task: CmdLine@2
-      inputs:
-        script: echo $(test) 
-    - task: CmdLine@2
-      inputs:
-        script: echo $(test2)       
+#    - task: CmdLine@2
+#      inputs:
+#        script: echo $(test) 
+#    - task: CmdLine@2
+#      inputs:
+#        script: echo $(test2)       
     
     - task: CmdLine@2
+      displayName: git clone
       inputs:
-        script: 'echo $(Build.SourceBranch)'
-     
+        script: | 
+          echo $(Build.SourceBranch)
+          ls -lah
+          git clone https://github.com/PastranaGit/test-azure.git
+          ls -lah
+   
     - task: Docker@2
       inputs:
         containerRegistry: 'DockerHubDemo'
