@@ -49,7 +49,7 @@ stages:
           echo $(Build.SourceBranch)
           ls -lah
           git clone https://github.com/PastranaGit/test-azure.git
-          cd $(Build.SourceBranch)/cd
+          cd test-azure
           ls -lah
    
     - task: Docker@2
@@ -57,7 +57,7 @@ stages:
         containerRegistry: 'DockerHubDemo'
         repository: 'pastranahub/pastrana-registry'
         command: 'buildAndPush'
-        Dockerfile: '$(Build.SourceBranch)/cd/Dockerfile'
+        Dockerfile: '$(Build.SourceBranch)/test-azure/Dockerfile'
         
     #
 
