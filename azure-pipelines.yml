@@ -8,6 +8,8 @@ trigger:
     include:
       - main
       - develop
+
+pool: ReadyTest
 pr: none
 #  branches: none
 #    include:
