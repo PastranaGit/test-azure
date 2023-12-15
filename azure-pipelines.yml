@@ -51,8 +51,9 @@ stages:
    
     - task: Docker@2
       inputs:
-        containerRegistry: 'DockerHubDemo'
-        repository: 'pastranahub/pastrana-registry'
+#        containerRegistry: 'DockerHubDemo'
+        containerRegistry: 'ACR-PRIVATE'
+        repository: 'private-repository'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/test-azure/Dockerfile'
         
