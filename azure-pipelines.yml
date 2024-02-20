@@ -9,7 +9,8 @@ trigger:
       - main
       - develop
 
-pool: ReadyTest
+#pool: ReadyTest
+
 pr: none
 #  branches: none
 #    include:
