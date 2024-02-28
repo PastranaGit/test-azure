@@ -55,6 +55,7 @@ stages:
     - task: Docker@2
       inputs:
        containerRegistry: 'ACR-PRIVATE'
+       repository: 'DemoTestlabs'
        command: 'buildAndPush'
        Dockerfile: '$(Build.SourcesDirectory)/test-azure/Dockerfile'
       displayName: 'Docker build and push'
