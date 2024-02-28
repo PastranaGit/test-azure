@@ -52,19 +52,18 @@ stages:
           git clone $(MainCodeURL)
           
    
-#    - task: Docker@2
-#      inputs:
-#        containerRegistry: 'DockerHubDemo'
-#       containerRegistry: 'ACR-PRIVATE'
-#        repository: 'private-repository'
-#        command: 'buildAndPush'
-#        Dockerfile: '$(Build.SourcesDirectory)/test-azure/Dockerfile'
-        
     - task: Docker@2
       inputs:
-        containerRegistry: 'DockerHub'
-        repository: 'alinehub/demohub'
-        command: 'buildAndPush'
-        Dockerfile: '$(Build.SourcesDirectory)/test-azure/Dockerfile'
+       containerRegistry: 'ACR-PRIVATE'
+       command: 'buildAndPush'
+       Dockerfile: '$(Build.SourcesDirectory)/test-azure/Dockerfile'
+      displayName: 'Docker build and push'
+        
+#    - task: Docker@2
+#      inputs:
+#        containerRegistry: 'DockerHub'
+#        repository: 'alinehub/demohub'
+#        command: 'buildAndPush'
+#        Dockerfile: '$(Build.SourcesDirectory)/test-azure/Dockerfile'
 
     
